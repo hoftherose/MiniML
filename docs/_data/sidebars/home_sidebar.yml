@@ -11,7 +11,7 @@ entries:
       url: /
     - output: web,pdf
       title: Machine Learning Clustering
-      url: /core
+      url: /Clustering
     output: web
     title: MiniML
   output: web

@@ -2,7 +2,14 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {}
+index = {"Categorize": "Clustering.ipynb",
+         "cat": "Clustering.ipynb",
+         "flowers.species": "Clustering.ipynb",
+         "plot_iris": "Clustering.ipynb",
+         "k": "Clustering.ipynb",
+         "it": "Clustering.ipynb",
+         "data": "Clustering.ipynb",
+         "centers": "Clustering.ipynb"}
 
 modules = ["core.py"]
 
