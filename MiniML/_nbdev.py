@@ -4,9 +4,9 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {}
 
-modules = []
+modules = ["core.py"]
 
-doc_url = "https://hoftherose.github.io/MiniML/"
+doc_url = "https://hoftherose.github.io"
 
 git_url = "https://github.com/hoftherose/MiniML/tree/master/"
 

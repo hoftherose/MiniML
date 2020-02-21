@@ -1,24 +1,7 @@
-# Project name here
-> Summary description here.
+# MiniML
+> Mini Machine Learning Projects to experiment with.
 
-
-This file will become your README and also the index of your documentation.
-
-## Install
-
-`pip install your_project_name`
 
 ## How to use
 
-Fill me in please! Don't forget code examples:
-
-```
-1+1
-```
-
-
-
-
-    2
-
-
+This is simple a compilation of machine learning projects that are too small to consider keeping separatly. Although they can be used as tutorials it would be better to only reference them when needed in bigger projects
