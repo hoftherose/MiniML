@@ -2,11 +2,18 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {}
+index = {"Categorize": "Clustering.ipynb",
+         "cat": "Clustering.ipynb",
+         "flowers.species": "Clustering.ipynb",
+         "plot_iris": "Clustering.ipynb",
+         "k": "Clustering.ipynb",
+         "it": "Clustering.ipynb",
+         "data": "Clustering.ipynb",
+         "centers": "Clustering.ipynb"}
 
-modules = []
+modules = ["core.py"]
 
-doc_url = "https://hoftherose.github.io/MiniML/"
+doc_url = "https://hoftherose.github.io"
 
 git_url = "https://github.com/hoftherose/MiniML/tree/master/"
 

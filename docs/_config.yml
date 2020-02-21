@@ -2,7 +2,7 @@ repository: hoftherose/MiniML
 output: web
 topnav_title: MiniML
 site_title: MiniML
-company_name: Your Name or Company Name
+company_name: Héctor M. de la Rosa Prado
 description: Mini Machine Learning Projects to test with.
 # Set to false to disable KaTeX math
 use_math: true
@@ -61,4 +61,4 @@ sidebars:
 permalink: pretty
 
 theme: jekyll-theme-cayman
-baseurl: /MiniML/
+baseurl: 
