@@ -53,21 +53,22 @@ centers = data[random.sample(range(len(data)), k)]
 
 # Cell
 def c_plot_iris(data: pandas.core.frame.DataFrame):
-    colormap = {0: 'red', 1: 'green', 2: 'blue'}
-    colors = [colormap[x] for x in data['species_idx']]
-
     source = ColumnDataSource(data)
-    TOOLTIPS = [
-        ("petal_length", "@petal_length"),
-        ("petal_width", "@petal_width"),
-        ("Correct", "@species")
-    ]
+    TOOLTIPS = """
+        <div>
+            <h3>petal_length: @petal_length</h3>
+            <h3>petal_width: @petal_width</h3>
+            <h3>Correct: @species</h3>
+        </div>
+    """
 
     p = figure(title = "Iris Morphology", tooltips=TOOLTIPS)
     p.xaxis.axis_label = 'Petal Length'
     p.yaxis.axis_label = 'Petal Width'
 
-    p.circle("petal_length", "petal_width", fill_alpha=0.2, size=10, source=source)
+    p.circle("petal_length", "petal_width", color="red", fill_alpha="setosa", size=10, line_alpha=0, source=source)
+    p.circle("petal_length", "petal_width", color="green", fill_alpha="versicolor", size=10, line_alpha=0, source=source)
+    p.circle("petal_length", "petal_width", color="blue", fill_alpha="virginica", size=10, line_alpha=0, source=source)
 
     output_notebook()
 
