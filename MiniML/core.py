@@ -48,7 +48,7 @@ def plot_iris(data: pandas.core.frame.DataFrame):
 # Cell
 k = 3
 it = 100
-data = torch.Tensor(flowers[flowers.columns[:4]].values)
+data = torch.tensor(flowers[flowers.columns[:4]].values)
 centers = data[random.sample(range(len(data)), k)]
 
 # Cell
