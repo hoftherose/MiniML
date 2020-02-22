@@ -9,7 +9,18 @@ index = {"Categorize": "Clustering.ipynb",
          "it": "Clustering.ipynb",
          "data": "Clustering.ipynb",
          "centers": "Clustering.ipynb",
-         "c_plot_iris": "Clustering.ipynb"}
+         "dist": "Clustering.ipynb",
+         "get_distances": "Clustering.ipynb",
+         "calc_centers": "Clustering.ipynb",
+         "np_results": "Clustering.ipynb",
+         "results": "Clustering.ipynb",
+         "c_flowers": "Clustering.ipynb",
+         "one_hot": "Clustering.ipynb",
+         "c_plot_iris": "Clustering.ipynb",
+         "c_data": "Clustering.ipynb",
+         "U": "Clustering.ipynb",
+         "c_dist": "Clustering.ipynb",
+         "c_calc_centers": "Clustering.ipynb"}
 
 modules = ["core.py"]
 
