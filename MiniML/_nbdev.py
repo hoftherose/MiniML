@@ -18,10 +18,13 @@ index = {"Categorize": "Clustering.ipynb",
          "one_hot": "Clustering.ipynb",
          "c_plot_iris": "Clustering.ipynb",
          "c_calc_centers": "Clustering.ipynb",
+         "update_u": "Clustering.ipynb",
+         "distances": "Clustering.ipynb",
          "c_data": "Clustering.ipynb",
-         "U": "Clustering.ipynb"}
+         "U": "Clustering.ipynb",
+         "eps": "Clustering.ipynb"}
 
-modules = ["core.py"]
+modules = ["clustering.py"]
 
 doc_url = "https://hoftherose.github.io"
 
