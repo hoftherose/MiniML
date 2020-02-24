@@ -17,7 +17,6 @@ index = {"Categorize": "Clustering.ipynb",
          "c_flowers": "Clustering.ipynb",
          "one_hot": "Clustering.ipynb",
          "c_plot_iris": "Clustering.ipynb",
-         "c_dist": "Clustering.ipynb",
          "c_calc_centers": "Clustering.ipynb",
          "c_data": "Clustering.ipynb",
          "U": "Clustering.ipynb"}
