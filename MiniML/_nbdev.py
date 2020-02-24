@@ -24,7 +24,7 @@ index = {"Categorize": "Clustering.ipynb",
          "U": "Clustering.ipynb",
          "eps": "Clustering.ipynb"}
 
-modules = ["core.py"]
+modules = ["clustering.py"]
 
 doc_url = "https://hoftherose.github.io"
 
