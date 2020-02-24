@@ -4,12 +4,22 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"Categorize": "Clustering.ipynb",
          "cat": "Clustering.ipynb",
-         "flowers.species": "Clustering.ipynb",
          "plot_iris": "Clustering.ipynb",
          "k": "Clustering.ipynb",
          "it": "Clustering.ipynb",
          "data": "Clustering.ipynb",
-         "centers": "Clustering.ipynb"}
+         "centers": "Clustering.ipynb",
+         "dist": "Clustering.ipynb",
+         "get_distances": "Clustering.ipynb",
+         "calc_centers": "Clustering.ipynb",
+         "np_results": "Clustering.ipynb",
+         "results": "Clustering.ipynb",
+         "c_flowers": "Clustering.ipynb",
+         "one_hot": "Clustering.ipynb",
+         "c_plot_iris": "Clustering.ipynb",
+         "c_calc_centers": "Clustering.ipynb",
+         "c_data": "Clustering.ipynb",
+         "U": "Clustering.ipynb"}
 
 modules = ["core.py"]
 
