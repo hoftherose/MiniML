@@ -13,6 +13,9 @@ entries:
       title: Tensorboard
       url: /Callbacks.Tensorboard
     - output: web,pdf
+      title: Weights and Biases
+      url: /Callbacks.WandB
+    - output: web,pdf
       title: Machine Learning Clustering
       url: /Clustering
     output: web

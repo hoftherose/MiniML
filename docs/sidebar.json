@@ -2,6 +2,7 @@
   "MiniML": {
     "Overview": "/",
     "Tensorboard": "/Callbacks.Tensorboard",
+    "Weights and Biases": "/Callbacks.WandB",
     "Machine Learning Clustering": "/Clustering"
   }
 }

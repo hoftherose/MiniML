@@ -2,11 +2,11 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"path": "Callbacks.Tensorboard.ipynb",
-         "fname": "Callbacks.Tensorboard.ipynb",
-         "pat": "Callbacks.Tensorboard.ipynb",
-         "dblock": "Callbacks.Tensorboard.ipynb",
-         "dls": "Callbacks.Tensorboard.ipynb",
+index = {"path": "Callbacks.WandB.ipynb",
+         "fname": "Callbacks.WandB.ipynb",
+         "pat": "Callbacks.WandB.ipynb",
+         "dblock": "Callbacks.WandB.ipynb",
+         "dls": "Callbacks.WandB.ipynb",
          "Categorize": "Clustering.ipynb",
          "cat": "Clustering.ipynb",
          "plot_iris": "Clustering.ipynb",
@@ -31,6 +31,7 @@ index = {"path": "Callbacks.Tensorboard.ipynb",
          "eps": "Clustering.ipynb"}
 
 modules = ["Callbacks/Tensorboard.py",
+           "Callbacks/WandB.py",
            "clustering.py"]
 
 doc_url = "https://hoftherose.github.io"
