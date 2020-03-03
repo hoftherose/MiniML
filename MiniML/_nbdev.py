@@ -30,7 +30,8 @@ index = {"path": "Callbacks.WandB.ipynb",
          "U": "Clustering.ipynb",
          "eps": "Clustering.ipynb"}
 
-modules = ["Callbacks/Tensorboard.py",
+modules = ["Callbacks/SaveModel.py",
+           "Callbacks/Tensorboard.py",
            "Callbacks/WandB.py",
            "clustering.py"]
 

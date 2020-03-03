@@ -1,6 +1,7 @@
 {
   "MiniML": {
     "Overview": "/",
+    "SaveModel": "/Callbacks.SaveModel",
     "Tensorboard": "/Callbacks.Tensorboard",
     "Weights and Biases": "/Callbacks.WandB",
     "Machine Learning Clustering": "/Clustering"
