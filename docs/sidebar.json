@@ -1,6 +1,7 @@
 {
   "MiniML": {
     "Overview": "/",
+    "Tensorboard": "/Callbacks.Tensorboard",
     "Machine Learning Clustering": "/Clustering"
   }
 }
