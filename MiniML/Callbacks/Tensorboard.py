@@ -21,4 +21,4 @@ dblock = DataBlock((ImageBlock,CategoryBlock),
                     batch_tfms=aug_transforms(),
                     get_y=RegexLabeller(pat))
 
-dls = dblock.dataloaders(path_img, bs=4)
+dls = dblock.dataloaders(path_img, bs=16)
