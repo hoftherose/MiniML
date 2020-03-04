@@ -9,17 +9,11 @@ from nbdev.showdoc import *
 
 # Cell
 path = untar_data(URLs.PETS)
-
-# Cell
 path_anno, path_img = [path/folder for folder in path.ls()]
-
-# Cell
 fname = get_image_files(path_img)
-fname[:5]
 
 # Cell
 pat = r'/(\w+)_\d+.jpg'
-
 dblock = DataBlock((ImageBlock,CategoryBlock),
                     splitter=RandomSplitter(),
                     get_items=get_image_files,
@@ -27,5 +21,4 @@ dblock = DataBlock((ImageBlock,CategoryBlock),
                     batch_tfms=aug_transforms(),
                     get_y=RegexLabeller(pat))
 
-# Cell
-dls = dblock.dataloaders(path_img, bs=4)
+dls = dblock.dataloaders(path_img, bs=16)
