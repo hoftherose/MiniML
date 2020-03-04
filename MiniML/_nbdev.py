@@ -3,10 +3,10 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"path": "Callbacks.WandB.ipynb",
-         "fname": "Callbacks.WandB.ipynb",
          "pat": "Callbacks.WandB.ipynb",
          "dblock": "Callbacks.WandB.ipynb",
          "dls": "Callbacks.WandB.ipynb",
+         "fname": "Callbacks.WandB.ipynb",
          "Categorize": "Clustering.ipynb",
          "cat": "Clustering.ipynb",
          "plot_iris": "Clustering.ipynb",
