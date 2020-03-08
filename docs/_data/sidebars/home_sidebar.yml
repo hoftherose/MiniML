@@ -10,6 +10,15 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
+      title: SaveModel
+      url: /Callbacks.SaveModel
+    - output: web,pdf
+      title: Tensorboard
+      url: /Callbacks.Tensorboard
+    - output: web,pdf
+      title: Weights and Biases
+      url: /Callbacks.WandB
+    - output: web,pdf
       title: Machine Learning Clustering
       url: /Clustering
     output: web
