@@ -14,6 +14,7 @@ fname = get_image_files(path_img)
 
 # Cell
 pat = r'/(\w+)_\d+.jpg'
+
 dblock = DataBlock((ImageBlock,CategoryBlock),
                     splitter=RandomSplitter(),
                     get_items=get_image_files,
