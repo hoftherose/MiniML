@@ -29,15 +29,7 @@ description: "Learning to use the tensorboard callback in fastaiv2"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Recap">Recap<a class="anchor-link" href="#Recap"> </a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Notes following the first lesson of the fastai 2019 Deep Learning for Practitioners Course. Code follows the lesson using fastaiv2, fastcore and is documented using the nbdev library.</p>
-<p>To start make sure you can import the fastai2 library and nbdev.</p>
-
+<h1 id="Setup">Setup<a class="anchor-link" href="#Setup"> </a></h1>
 </div>
 </div>
 </div>
@@ -57,7 +49,6 @@ description: "Learning to use the tensorboard callback in fastaiv2"
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">PETS</span><span class="p">)</span>
 <span class="n">path_anno</span><span class="p">,</span> <span class="n">path_img</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span><span class="o">/</span><span class="n">folder</span> <span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">ls</span><span class="p">()]</span>
-<span class="n">fname</span> <span class="o">=</span> <span class="n">get_image_files</span><span class="p">(</span><span class="n">path_img</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -83,7 +74,7 @@ description: "Learning to use the tensorboard callback in fastaiv2"
                     <span class="n">batch_tfms</span><span class="o">=</span><span class="n">aug_transforms</span><span class="p">(),</span>
                     <span class="n">get_y</span><span class="o">=</span><span class="n">RegexLabeller</span><span class="p">(</span><span class="n">pat</span><span class="p">))</span>
 
-<span class="n">dls</span> <span class="o">=</span> <span class="n">dblock</span><span class="o">.</span><span class="n">dataloaders</span><span class="p">(</span><span class="n">path_img</span><span class="p">,</span> <span class="n">bs</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">dls</span> <span class="o">=</span> <span class="n">dblock</span><span class="o">.</span><span class="n">dataloaders</span><span class="p">(</span><span class="n">path_img</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -95,7 +86,40 @@ description: "Learning to use the tensorboard callback in fastaiv2"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In fastai2, since we can't modify the learner object and change the learning workflow we can just add the Tensorboard callback from the fastai2 library. Similar to the SaveModelCallback, we can just add the callback to our cbs parameter in our fit method.</p>
+<h1 id="Using-TensorBoard">Using TensorBoard<a class="anchor-link" href="#Using-TensorBoard"> </a></h1>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tensorboard</span>
+<span class="kn">from</span> <span class="nn">fastai2.callback.tracker</span> <span class="kn">import</span> <span class="n">SaveModelCallback</span>
+<span class="kn">from</span> <span class="nn">fastai2.callback.tensorboard</span> <span class="kn">import</span> <span class="n">TensorBoardCallback</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-is-tensorboard?">What is tensorboard?<a class="anchor-link" href="#What-is-tensorboard?"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>TensorBoard is a library built to work with Google's TensorFlow deep learning library. It lets us track and share our deep learning model and results. This is great when working with large teams, and sometimes tends to be a must.</p>
+<p>Like all callback solutions, we need to add code to the training loop for TensorBoard to work. To solve this there is a Tensorboard callback builtin the fastai2 library. Similar to the SaveModelCallback, we can just add the callback to our cbs parameter in our fit method.</p>
+<p>Before this, we need to define the tensorboard directory and the project_id. The first defines where the TensorBoard project results will be stored, while the second will define which project we are currently working on.</p>
 
 </div>
 </div>
@@ -125,9 +149,42 @@ description: "Learning to use the tensorboard callback in fastaiv2"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tensorboard</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">callbacks</span> <span class="o">=</span> <span class="p">(</span><span class="n">TensorBoardCallback</span><span class="p">(</span><span class="n">log_dir</span><span class="o">=</span><span class="n">tboard_path</span><span class="p">))</span>
+</pre></div>
 
-<span class="kn">from</span> <span class="nn">fastai2.callback.tensorboard</span> <span class="kn">import</span> <span class="n">TensorBoardCallback</span>
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Training">Training<a class="anchor-link" href="#Training"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#show</span>
+<span class="k">def</span> <span class="nf">group_callbacks</span><span class="p">(</span><span class="n">path</span><span class="p">:</span><span class="n">Path</span><span class="p">,</span> <span class="n">save</span><span class="p">:</span><span class="nb">bool</span><span class="p">):</span>
+    <span class="n">tbcb</span> <span class="o">=</span> <span class="n">TensorBoardCallback</span><span class="p">(</span><span class="n">log_dir</span><span class="o">=</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">savecb</span> <span class="o">=</span> <span class="n">SaveModelCallback</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="n">path</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">every_epoch</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">with_opt</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">save</span><span class="p">:</span> <span class="k">return</span> <span class="p">(</span><span class="n">tbcb</span><span class="p">,</span> <span class="n">savecb</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">tbcb</span><span class="p">,)</span>
+
+<span class="k">def</span> <span class="nf">train_with</span><span class="p">(</span><span class="n">epochs</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span><span class="n">Path</span><span class="o">=</span><span class="n">tboard_path</span><span class="p">,</span> <span class="n">save</span><span class="p">:</span><span class="nb">bool</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">cbs</span> <span class="o">=</span> <span class="n">group_callbacks</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="n">save</span><span class="p">)</span>
+    <span class="n">learner</span> <span class="o">=</span> <span class="n">Learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">resnet34</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">metrics</span><span class="o">=</span><span class="n">error_rate</span><span class="p">)</span>
+    <span class="n">learner</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">,</span> <span class="n">cbs</span><span class="o">=</span><span class="n">cbs</span><span class="p">)</span>
+    <span class="n">learner</span><span class="o">.</span><span class="n">show_results</span><span class="p">()</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">empty_cache</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -144,7 +201,7 @@ description: "Learning to use the tensorboard callback in fastaiv2"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">callbacks</span> <span class="o">=</span> <span class="p">(</span><span class="n">TensorBoardCallback</span><span class="p">(</span><span class="n">log_dir</span><span class="o">=</span><span class="n">tboard_path</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_with</span><span class="p">(</span><span class="n">epochs</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -154,12 +211,6 @@ description: "Learning to use the tensorboard callback in fastaiv2"
 </div>
     {% endraw %}
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Using-TensorBoard">Using TensorBoard<a class="anchor-link" href="#Using-TensorBoard"> </a></h1>
-</div>
-</div>
-</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -275,7 +326,14 @@ Not within tolerance rtol=1e-05 atol=1e-05 at input[7, 287] (0.575318455696106 v
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="TensorBoard-with-SaveModel-Callback">TensorBoard with SaveModel Callback<a class="anchor-link" href="#TensorBoard-with-SaveModel-Callback"> </a></h1>
+<h2 id="Adding-SaveModel-Callback">Adding SaveModel Callback<a class="anchor-link" href="#Adding-SaveModel-Callback"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To add the SaveModel Callback we can just set save to True. This simply adds the callback to the cbs Tuple.</p>
+
 </div>
 </div>
 </div>
@@ -286,24 +344,8 @@ Not within tolerance rtol=1e-05 atol=1e-05 at input[7, 287] (0.575318455696106 v
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">fastai2.callback.tracker</span> <span class="kn">import</span> <span class="n">SaveModelCallback</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">callbacks</span> <span class="o">=</span> <span class="p">(</span><span class="n">SaveModelCallback</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="s2">&quot;valid_loss&quot;</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="s2">&quot;valid_loss_save&quot;</span><span class="p">,</span> <span class="n">every_epoch</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">with_opt</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">TensorBoardCallback</span><span class="p">(</span><span class="n">log_dir</span><span class="o">=</span><span class="n">tboard_path</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># cbs = (tensorboard, savemodel)</span>
+<span class="n">train_with</span><span class="p">(</span><span class="n">epochs</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
