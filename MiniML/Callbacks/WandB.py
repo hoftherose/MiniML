@@ -28,4 +28,4 @@ dblock = DataBlock((ImageBlock,CategoryBlock),
                     get_y=RegexLabeller(pat))
 
 # Cell
-dls = dblock.dataloaders(path_img, bs=4)
+dls = dblock.dataloaders(path_img, bs=16)
