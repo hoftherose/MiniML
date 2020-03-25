@@ -9,6 +9,7 @@ import torch
 import pandas
 import random
 from fastcore.all import *
+random.seed(42)
 
 # Cell
 from bokeh.plotting import figure, show
@@ -80,7 +81,8 @@ results = pandas.DataFrame(np_results, columns=flowers.columns[flowers.columns!=
 # Cell
 c_flowers = flowers
 one_hot = pandas.get_dummies(c_flowers['species'], dtype=float)
-one_hot_show = pandas.get_dummies(c_flowers['species'].replace({'setosa': 'red_fill', 'versicolor': 'green_fill', 'virginica': 'blue_fill'}), dtype=float)
+one_hot_show = pandas.get_dummies(c_flowers['species'], dtype=float)
+one_hot_show.columns = ['red_fill', 'green_fill', 'blue_fill']
 c_flowers = c_flowers.join(one_hot)
 c_flowers = c_flowers.join(one_hot_show)
 c_flowers
