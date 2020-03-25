@@ -48,7 +48,7 @@ description: "Learning to use the tensorboard callback in fastaiv2"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">PETS</span><span class="p">)</span>
-<span class="n">path_anno</span><span class="p">,</span> <span class="n">path_img</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span><span class="o">/</span><span class="n">folder</span> <span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">ls</span><span class="p">()]</span>
+<span class="n">path_anno</span><span class="p">,</span> <span class="n">path_img</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span><span class="o">/</span><span class="n">folder</span> <span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">ls</span><span class="p">()</span><span class="o">.</span><span class="n">sorted</span><span class="p">()]</span>
 </pre></div>
 
     </div>

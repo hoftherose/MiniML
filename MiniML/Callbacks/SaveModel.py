@@ -9,7 +9,7 @@ from nbdev.showdoc import *
 
 # Cell
 path = untar_data(URLs.PETS)
-path_anno, path_img = [path/folder for folder in path.ls()]
+path_anno, path_img = [path/folder for folder in path.ls().sorted()]
 
 # Cell
 pat = r'/(\w+)_\d+.jpg'
